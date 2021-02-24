@@ -11,16 +11,15 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#pricing">PRICING</a></li>
+        <li><a href="#item">PRODUCTS</a></li>
+        <li><a href="#serv">SERVICES</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" id="about">
   <h1>Company</h1>
   <p>Join with us</p>
   <div class="container-fluid">
@@ -29,9 +28,9 @@
 </div>
 
 
-<app-items-view></app-items-view>
+<app-items-view id="item"></app-items-view>
 
-<div class="container-fluid text-center">
+<div class="container-fluid text-center" id="serv">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br>
@@ -56,7 +55,10 @@
 
 </div>
 
-<footer class="container-fluid text-center" style="background-color: black;">
+<app-contact id="contact">
+</app-contact>
+
+<footer class="container-fluid text-center"  style="background-color: black;" >
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>

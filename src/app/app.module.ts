@@ -8,13 +8,15 @@ import { ShoppingHomeComponent } from './screens/shopping/shopping-home/shopping
 import { MaterialModule } from './material-module';
 import { SlideShowComponent } from './screens/shopping/slide-show/slide-show.component';
 import { ItemsViewComponent } from './screens/shopping/items-view/items-view.component';
+import { ContactComponent } from './screens/shopping/contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingHomeComponent,
     SlideShowComponent,
-    ItemsViewComponent
+    ItemsViewComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

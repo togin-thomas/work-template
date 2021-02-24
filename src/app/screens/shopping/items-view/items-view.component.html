@@ -1,24 +1,30 @@
 <div class="container-fluid" style="margin: 50px;">
   <div class="row">
-    <ng-container *ngFor="let item of items">
+    <ng-container *ngFor="let item of items; let in = index">
       <div class="col-md-3 col-sm-4 col-xs-12">
-        <div class="item-main-div">
-          <button mat-mini-fab style="position: absolute;top: 10px;right: 30px;" color="warn">
-            <span class="material-icons" style="color:black">
+        <div class="thumbnail">
+          <button mat-icon-button style="position: absolute;top: 10px;right: 30px;" color="warn">
+            <span class="material-icons" (click)="like(in, item)" [ngClass]="(item.like)? 'clr-cls': 'blk-cls'">
               favorite
             </span>
           </button>
-          <div style="background-color: gray;text-align: center;">
-            <img src="../../../../assets/3.jpg" alt="prod">
-          </div>
-          <button mat-fab style="position: absolute;top: 100px;right: 30px;" color="warn">
+          <img src="../../../../assets/3.jpg" alt="Paris" width="400" height="300">
+          <button mat-mini-fab style="position: absolute;top: 110px;right: 30px;" color="primary" *ngIf="item.cart"
+            (click)="cart(in, item)">
+            <span class="material-icons">
+              visibility
+            </span>
+          </button>
+          <button mat-mini-fab style="position: absolute;top: 110px;right: 30px;" *ngIf="!item.cart" color="warn"
+            (click)="cart(in, item)">
             <span class="material-icons">
               shopping_cart
             </span>
           </button>
+          <p class="name-cls"><strong>{{ item.name }}</strong></p>
           <div class="row">
             <div>
-              <p style="margin-left: 20px; color:orange;float: left;">$46.00</p>
+              <p class="price-cls">$46.00</p>
             </div>
             <div style="margin-right: 20px;float: right;">
               <span class="fa fa-star checked"></span>
@@ -27,9 +33,6 @@
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star"></span>
             </div>
-          </div>
-          <div class="row">
-            <h4 style="margin-left: 20px;">Flower {{ item }}</h4>
           </div>
         </div>
       </div>

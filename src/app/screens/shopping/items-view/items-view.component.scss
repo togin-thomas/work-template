@@ -1,5 +1,5 @@
 .item-main-div {
-  border: 1px solid grey;
+  border: 1px solid #e7bebe;
   border-radius: 5px;
   margin: 5px;
 }
@@ -10,4 +10,30 @@ img {
 
 .checked {
   color: orange;
+}
+
+.name-cls {
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.price-cls {
+  margin-left: 20px;
+  color: orange;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.fa {
+  font-size: 16px;
+}
+
+.blk-cls {
+  color: black;
+}
+
+.clr-cls {
+  color: #3f51b5;
 }
