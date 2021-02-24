@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-items-view',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemsViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private mediaObserver: MediaObserver,
+  ) { }
   items = [{
     id: 1,
     name: 'Test 1',
@@ -67,13 +71,62 @@ export class ItemsViewComponent implements OnInit {
     name: 'Test 10',
     like: false,
     cart: false
+  },
+  {
+    id: 11,
+    name: 'Test 11',
+    like: false,
+    cart: false
+  },
+  {
+    id: 12,
+    name: 'Test 12',
+    like: false,
+    cart: false
+  },
+  {
+    id: 13,
+    name: 'Test 13',
+    like: false,
+    cart: false
+  },
+  {
+    id: 14,
+    name: 'Test 14',
+    like: false,
+    cart: false
   }
   ];
+  viewItems = [];
+  itemPage = 1;
+  singlePageCount = 3;
+  mediaSub: Subscription;
+  deviceXs: boolean;
   ngOnInit(): void {
+    this.mediaSub = this.mediaObserver.media$.subscribe((res: MediaChange) => {
+      this.deviceXs = res.mqAlias === 'xs' ? true : false;
+      if (this.deviceXs) {
+        this.singlePageCount = 3;
+      } else {
+        this.singlePageCount = 6;
+      }
+      this.arrangeItems();
+    });
+
+  }
+
+  arrangeItems(): void {
+    this.viewItems = [];
+    this.itemPage = 1;
+    this.items.forEach((item, index) => {
+      if (index < this.singlePageCount) {
+        this.viewItems.push(item);
+      }
+    });
   }
 
   like(index, item): void {
-    if(this.items[index].like) {
+    if (this.items[index].like) {
       this.items[index].like = false;
     } else {
       this.items[index].like = true;
@@ -81,10 +134,43 @@ export class ItemsViewComponent implements OnInit {
   }
 
   cart(index, item): void {
-    if(this.items[index].cart) {
+    if (this.items[index].cart) {
       this.items[index].cart = false;
     } else {
       this.items[index].cart = true;
+    }
+  }
+
+  back(): void {
+    if (this.itemPage > 1) {
+      this.itemPage = this.itemPage - 1;
+      const end = this.itemPage * this.singlePageCount;
+      const start = end - this.singlePageCount;
+      this.viewItems = [];
+      for (let i = start; i < end; i++) {
+        if (this.items[i] !== null) {
+          const item = this.items[i];
+          this.viewItems.push(item);
+        }
+      }
+    }
+  }
+
+  frwd(): void {
+    if ((this.itemPage * 3) < this.items.length) {
+      this.itemPage = this.itemPage + 1;
+      let end = this.itemPage * this.singlePageCount;
+      const start = end - this.singlePageCount;
+      if (end > this.items.length) {
+        end = this.items.length;
+      }
+      this.viewItems = [];
+      for (let i = start; i < end; i++) {
+        if (this.items[i] !== null) {
+          const item = this.items[i];
+          this.viewItems.push(item);
+        }
+      }
     }
   }
 }

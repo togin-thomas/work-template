@@ -1,7 +1,8 @@
-<div class="container-fluid" style="margin: 50px;">
-  <div class="row">
-    <ng-container *ngFor="let item of items; let in = index">
-      <div class="col-md-3 col-sm-4 col-xs-12">
+<div class="container-fluid" style="margin: 30px;">
+  <h3 style="text-align: center;margin: 20px;">Our products</h3>
+  <div class="row" *ngIf="viewItems && viewItems.length > 0">
+    <ng-container *ngFor="let item of viewItems; let in = index">
+      <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="thumbnail">
           <button mat-icon-button style="position: absolute;top: 10px;right: 30px;" color="warn">
             <span class="material-icons" (click)="like(in, item)" [ngClass]="(item.like)? 'clr-cls': 'blk-cls'">
@@ -38,5 +39,21 @@
       </div>
     </ng-container>
 
+  </div>
+</div>
+<div class="container-fluid">
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <button mat-mini-fab style="background-color: black;" (click)="back()" [disabled]="itemPage< 2"
+      [ngClass]="(itemPage < 2)? 'blur-cls':''" href="#item">
+      <span class="material-icons">
+        keyboard_arrow_left
+      </span>
+    </button>
+    <button mat-mini-fab color="accent" style="background-color: black;" (click)="frwd()"
+      [disabled]="((itemPage* singlePageCount) >= items.length)" [ngClass]="((itemPage* singlePageCount) >= items.length)? 'blur-cls':''">
+      <span class="material-icons">
+        keyboard_arrow_right
+      </span>
+    </button>
   </div>
 </div>
