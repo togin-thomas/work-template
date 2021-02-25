@@ -9,21 +9,21 @@
               favorite
             </span>
           </button>
-          <img src="../../../../assets/3.jpg" alt="Paris" width="400" height="300">
-          <button mat-mini-fab style="position: absolute;top: 110px;right: 30px;" color="primary" *ngIf="item.cart"
-            (click)="cart(in, item)">
+          <img src="../../../../assets/3.jpg" alt="Paris" width="400" height="300" (click)="openDetails(item)">
+          <button [@bounce] class="cart-icon" mat-mini-fab style="position: absolute;top: 110px;right: 30px;"
+            color="primary" *ngIf="item.cart" (click)="cart(in, item)">
             <span class="material-icons">
               visibility
             </span>
           </button>
-          <button mat-mini-fab style="position: absolute;top: 110px;right: 30px;" *ngIf="!item.cart" color="warn"
-            (click)="cart(in, item)">
+          <button [@bounce] class="cart-icon" mat-mini-fab style="position: absolute;top: 110px;right: 30px;"
+            *ngIf="!item.cart" color="warn" (click)="cart(in, item)">
             <span class="material-icons">
               shopping_cart
             </span>
           </button>
-          <p class="name-cls"><strong>{{ item.name }}</strong></p>
-          <div class="row">
+          <p class="name-cls" (click)="openDetails(item)"><strong>{{ item.name }}</strong></p>
+          <div class="row" (click)="openDetails(item)">
             <div>
               <p class="price-cls">$46.00</p>
             </div>
@@ -50,7 +50,8 @@
       </span>
     </button>
     <button mat-mini-fab color="accent" style="background-color: black;" (click)="frwd()"
-      [disabled]="((itemPage* singlePageCount) >= items.length)" [ngClass]="((itemPage* singlePageCount) >= items.length)? 'blur-cls':''">
+      [disabled]="((itemPage* singlePageCount) >= items.length)"
+      [ngClass]="((itemPage* singlePageCount) >= items.length)? 'blur-cls':''">
       <span class="material-icons">
         keyboard_arrow_right
       </span>

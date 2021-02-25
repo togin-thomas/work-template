@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaObserver, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
-
+import { Router } from '@angular/router';
+import { useAnimation, trigger, transition } from '@angular/animations';
+import { bounce } from 'ng-animate';
 @Component({
   selector: 'app-items-view',
   templateUrl: './items-view.component.html',
-  styleUrls: ['./items-view.component.scss']
+  styleUrls: ['./items-view.component.scss'],
+  animations: [
+    trigger('bounce', [transition('* => *',
+      useAnimation(bounce, {
+        params: { timing: 3, delay: 0.1 }
+      }))])
+  ]
 })
 export class ItemsViewComponent implements OnInit {
 
   constructor(
     private mediaObserver: MediaObserver,
+    private router: Router
   ) { }
   items = [{
     id: 1,
@@ -172,5 +181,9 @@ export class ItemsViewComponent implements OnInit {
         }
       }
     }
+  }
+
+  openDetails(item): void {
+    this.router.navigate(['itemView', item.id.toString()]);
   }
 }

@@ -1,0 +1,66 @@
+<!-- <div style="min-height: 90vh;">
+    test
+</div>
+ -->
+<div class="container-fluid" style="margin:100px 20px 50px 20px;;min-height: 90vh;">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutGap="20px">
+    <div>
+      <div fxLayout="column" fxLayout.xs="row" fxLayoutAlign="start start" fxLayoutGap="30px">
+
+        <div class="thumbnail hover-cls" [ngClass]="(selectImgInd == 0)? 'border-cls':''">
+          <img src="../../../../assets/3.jpg" alt="Paris" width="65" height="60" (mouseenter)="openImage(0)"
+            (click)="openImage(0)">
+        </div>
+        <div class="thumbnail hover-cls" [ngClass]="(selectImgInd == 1)? 'border-cls':''">
+          <img src="../../../../assets/2.jpg" alt="Paris" width="65" height="60" (mouseenter)="openImage(1)"
+            (click)="openImage(1)">
+        </div>
+        <div class="thumbnail hover-cls" [ngClass]="(selectImgInd == 2)? 'border-cls':''">
+          <img src="../../../../assets/3.jpg" alt="Paris" width="65" height="60" (mouseenter)="openImage(2)"
+            (click)="openImage(2)">
+        </div>
+        <div class="thumbnail hover-cls" [ngClass]="(selectImgInd == 3)? 'border-cls':''">
+          <img src="../../../../assets/2.jpg" alt="Paris" width="65" height="60" (mouseenter)="openImage(3)"
+            (click)="openImage(3)">
+        </div>
+      </div>
+    </div>
+    <div class="thumbnail"><img [src]="imgName" alt="Paris" width="360" height="270">
+    </div>
+    <div>
+      <p><strong>Flower 1</strong></p>
+      <p style="color:red;text-decoration: underline;" (click)="goBackItems()">View all items</p>
+      <div>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <p style="font-size: 25px;color: red;"><strong>46.6$</strong></p>
+      <div>
+        <span><b>Availabilty : &nbsp;</b></span> <span> &nbsp; in-stock</span>
+      </div>
+      <div>
+        <span><b>Code : &nbsp;</b></span> <span> &nbsp; #item100</span>
+      </div>
+      <div>
+        <span><b>Tag : &nbsp;</b></span> <span> &nbsp; flower</span>
+      </div>
+      <div style="margin-top: 30px; width: 300px;">
+        Dolor sit amet consectetur, adipisicing elit. Distinctio aperiam debitis ipsa veniam eos quas excepturi quae?
+        Recusandae distinctio nihil quia quis, eaque aspernatur perferendis repudiandae adipisci labore, impedit beatae!
+      </div>
+      <div style="margin-top: 30px; width: 350px;">
+        <button mat-flat-button color="warn" style="width: 150px;height: 40px;">
+          ADD TO CART
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button mat-flat-button color="primary" style="width: 150px;margin-left: 20px;height: 40px;">
+          BUY
+          <mat-icon style="vertical-align: middle;">bolt</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

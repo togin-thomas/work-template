@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#about">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a routerLink="/home">PRODUCTS</a></li>
+        <li><a routerLink="/cart">CART</a></li>
+        <li><a href="#serv">SERVICES</a></li>
+        <li><a routerLink="/contactUs">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<app-contact id="contact"></app-contact>
+<footer class="container-fluid text-center" style="background-color: black;">
+  <a href="#about" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up" style="color:white"></span>
+  </a>
+  <p style="color:white">Theme Made By <a href="https://togin-thomas.github.io/togin.github.io/"
+      title="Visit w3schools">https://togin-thomas.github.io/togin.github.io/</a></p>
+</footer>

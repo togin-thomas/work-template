@@ -10,6 +10,10 @@ import { MaterialModule } from './material-module';
 import { SlideShowComponent } from './screens/shopping/slide-show/slide-show.component';
 import { ItemsViewComponent } from './screens/shopping/items-view/items-view.component';
 import { ContactComponent } from './screens/shopping/contact/contact.component';
+import { ItemDetailsComponent } from './screens/shopping/item-details/item-details.component';
+import { LayoutComponent } from './screens/shopping/layout/layout.component';
+import { ShoppingCartComponent } from './screens/shopping/shopping-cart/shopping-cart.component';
+import { ShoppingContactUsComponent } from './screens/shopping/shopping-contact-us/shopping-contact-us.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ContactComponent } from './screens/shopping/contact/contact.component';
     ShoppingHomeComponent,
     SlideShowComponent,
     ContactComponent,
-    ItemsViewComponent
+    ItemsViewComponent,
+    ItemDetailsComponent,
+    LayoutComponent,
+    ShoppingCartComponent,
+    ShoppingContactUsComponent
   ],
   imports: [
     BrowserModule,
