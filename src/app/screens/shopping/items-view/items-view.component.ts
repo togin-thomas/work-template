@@ -29,7 +29,7 @@ export class ItemsViewComponent implements OnInit {
   },
   {
     id: 2,
-    name: 'Test ',
+    name: 'Test 2',
     like: false,
     cart: false
   },
@@ -111,6 +111,9 @@ export class ItemsViewComponent implements OnInit {
   singlePageCount = 3;
   mediaSub: Subscription;
   deviceXs: boolean;
+  img1 = 'https://images.unsplash.com/photo-1447875569765-2b3db822bec9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80';
+  img2 = 'https://images.unsplash.com/photo-1488875482628-eee706cbfad5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80';
+
   ngOnInit(): void {
     this.mediaSub = this.mediaObserver.media$.subscribe((res: MediaChange) => {
       this.deviceXs = res.mqAlias === 'xs' ? true : false;

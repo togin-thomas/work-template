@@ -8,28 +8,33 @@
 
 <app-items-view id="item"></app-items-view>
 
-<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" style="margin-top: 50px;">
-  <div fxFlex="33.4%" fxFlexFill class="img-main-div">
-    <img [src]="img1" alt="img1" class="img-cls-off">
-    <h2 class="img-centered img-text">
-      50% Offer Sale
-    </h2>
-  </div>
-  <div fxFlex="33.3%" fxFlexFill class="img-main-div">
-    <img [src]="img2" alt="img2" class="img-cls-off">
-    <h2 class="img-centered img-text">
-      40% Offer Sale
-    </h2>
-  </div>
-  <div fxFlex="33.3%" fxFlexFill class="img-main-div">
-    <img [src]="img3" alt="img3" class="img-cls-off">
-    <h2 class="img-centered img-text">
-      30% Offer Sale
-    </h2>
+<div class="text-center" style="margin-bottom: 50px;margin-top:50px;">
+  <h2>
+    Offers
+  </h2>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start">
+    <div fxFlex="33.4%" fxFlexFill class="img-main-div">
+      <img [src]="img1" alt="img1" class="img-cls-off">
+      <h2 class="img-centered img-text">
+        50% Offer Sale
+      </h2>
+    </div>
+    <div fxFlex="33.3%" fxFlexFill class="img-main-div">
+      <img [src]="img2" alt="img2" class="img-cls-off">
+      <h2 class="img-centered img-text">
+        40% Offer Sale
+      </h2>
+    </div>
+    <div fxFlex="33.3%" fxFlexFill class="img-main-div">
+      <img [src]="img3" alt="img3" class="img-cls-off">
+      <h2 class="img-centered img-text">
+        30% Offer Sale
+      </h2>
+    </div>
   </div>
 </div>
 
-<div class="container-fluid text-center" id="serv">
+<div class="container text-center" id="serv" style="margin-top: 50px;">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br>
@@ -54,19 +59,21 @@
 
 </div>
 
-<div class="container text-center"  style="margin-bottom: 50px;">
+<div class="container text-center" style="margin-bottom: 50px;">
   <h2>
     Customer Reviews
   </h2>
+  <h4>What our customers say</h4>
   <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutAlign.xs="center center"
-    fxLayoutGap="20px">
-    <div>
+    fxLayoutGap="20px" style="margin-top: 30px;">
+    <!-- <div>
       <button mat-mini-fab>
         <mat-icon>keyboard_arrow_left</mat-icon>
       </button>
-    </div>
+    </div> -->
     <mat-card>
       <h3> John </h3>
+      <hr>
       <div>
         <p class="review-font">
           " &nbsp;I love the way it has delivered to me and after using , i just wanna say one word that is awesome
@@ -76,6 +83,7 @@
     </mat-card>
     <mat-card>
       <h3> Dan </h3>
+      <hr>
       <div>
         <p class="review-font">
           " &nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -85,6 +93,7 @@
     </mat-card>
     <mat-card>
       <h3> Mike </h3>
+      <hr>
       <div>
         <p class="review-font">
           " &nbsp;I love the way it has delivered to me and after using , i just wanna say one word that is awesome
@@ -92,10 +101,10 @@
         </p>
       </div>
     </mat-card>
-    <div>
+    <!-- <div>
       <button mat-mini-fab>
         <mat-icon>keyboard_arrow_right</mat-icon>
       </button>
-    </div>
+    </div> -->
   </div>
 </div>

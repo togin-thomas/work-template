@@ -16,9 +16,21 @@
 }
 
 .navbar-nav li a:hover,
+a:hover,
+a.active,
 .navbar-nav li.active a {
   color: black !important;
   background-color: #fff !important;
+}
+
+a:hover,
+a.active,
+a {
+  text-decoration: none;
+}
+
+a {
+  color: white
 }
 
 .navbar-default .navbar-toggle {
@@ -35,4 +47,21 @@ footer .glyphicon {
 
 .fa {
   font-size: 25px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.tab-class {
+  top: 0;
+  background-color: black;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+  color: white;
 }

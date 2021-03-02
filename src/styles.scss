@@ -21,3 +21,19 @@ body {
 .fa {
   font-size: 16px;
 }
+
+hr {
+  border-top: 1px solid #eac1c1 !important;
+}
+
+mat-card {
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(36 36 36 / 14%),
+    0px 1px 3px 0px rgb(0 0 0 / 48%) !important;
+}
+
+mat-toolbar {
+  position: fixed;
+  z-index: 100;
+  width: 100% !important;
+}

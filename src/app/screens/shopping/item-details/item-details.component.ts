@@ -13,7 +13,7 @@ export class ItemDetailsComponent implements OnInit {
   ) { }
 
   selectImgInd = 0;
-  imgName = '../../../../assets/3.jpg';
+  imgName = '../../../../assets/img4.jpg';
 
   ngOnInit(): void {
   }
@@ -21,9 +21,9 @@ export class ItemDetailsComponent implements OnInit {
   openImage(index): void {
     this.selectImgInd = index;
     if (index === 0 || index === 2) {
-      this.imgName = '../../../../assets/3.jpg';
+      this.imgName = '../../../../assets/img4.jpg';
     } else {
-      this.imgName = '../../../../assets/2.jpg';
+      this.imgName = '../../../../assets/img5.jpg';
     }
   }
 
